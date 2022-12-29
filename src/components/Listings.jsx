@@ -48,9 +48,9 @@ export default function Listings() {
               </td>
 
               <td>
-                <button type="button" class="btn btn-light">
+                <Button variant="light" class="btn btn-light">
                   <i class="fa fa-angle-right"></i>
-                </button>
+                </Button>
               </td>
             </tr>
           ))}
