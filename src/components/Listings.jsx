@@ -1,22 +1,9 @@
-import React, { useState, useEffect } from "react";
-// import Button from 'react-bootstrap/Button';
+import React from "react";
 import { Table, Button} from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-function Listings() {
-  const [countries, SetCountries] = useState([]);
-
-  const url = "https://restcountries.com/v3.1/all";
-
-  useEffect(() => {
-    fetch(url)
-      .then((res) => {
-        if (!res.ok) {
-          return Error("Oh no");
-        }
-        return res.json();
-      })
-      .then((data) => SetCountries(data));
-  });
+function Listings({countries}) {
+  
 
   return (
     <>
@@ -47,16 +34,18 @@ function Listings() {
                   </ul>
                 ) : null}
               </td>
-
               <td>
+                {console.log(country.name.common)}
+                <Link to={`/details/${country.name.common}`}>
                 <Button variant="light" class="btn btn-light">
                   <i class="fa fa-angle-right"></i>
                 </Button>
+                </Link>
               </td>
             </tr>
           ))}
         </tbody>
-      </Table>
+      </Table>      
     </>
   );
 }
