@@ -1,63 +1,45 @@
-import React from "react";
+import React, { useState, useMemo} from "react";
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import debounce from "lodash.debounce";
 
-export default function Navbar() {
-  return (
-    <>
-      {/* Code of my navbar*/}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="/">
-            Country
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              {/* <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">Home</a>
-        </li> */}
-              {/* <li className="nav-item">
-          <a className="nav-link" href="/">Link</a>
-        </li> */}
-              {/* <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="/">Action</a></li>
-            <li><a className="dropdown-item" href="/">Another action</a></li>
-            <li><hr className="dropdown-divider"/></li>
-            <li><a className="dropdown-item" href="/">Something else here</a></li>
-          </ul>
-        </li> */}
-              {/* <li className="nav-item">
-          <a className="nav-link disabled">Disabled</a>
-        </li> */}
-            </ul>
-            <form className="d-flex">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
-        </div>
-      </nav>
-    </>
+export default function NavBar({showSearchResult}) {
+  const [searchString, setSearchString] = useState("");
+
+const searchStringHandler = (e) => {
+setSearchString(e.target.value);
+debouncedChangeHandler(e.target.value)
+};
+
+const debouncedChangeHandler = useMemo(() => debounce(value =>
+showSearchResult(value), 500), [showSearchResult]
+)
+return (
+  <Navbar bg="light" expand="lg">
+  <Container fluid>
+  <Navbar.Brand href="#"><i className="fa fa-bars"></i></Navbar.Brand>
+  <Navbar.Toggle aria-controls="navbarScroll" />
+  <Navbar.Collapse id="navbarScroll">
+  <Nav
+  className="me-auto my-2 my-lg-0"
+  style={{ maxHeight: '100px' }}
+  navbarScroll
+  >
+  <Nav.Link href="#home">Country</Nav.Link>
+  </Nav>
+  <Form className="d-flex">
+  <Form.Control
+  placeholder="Search and press enter"
+  aria-label="search"
+  aria-describedby="basic-addon1"
+  onChange={searchStringHandler}
+  value={searchString}
+  />
+  </Form>
+  </Navbar.Collapse>
+  </Container>
+  </Navbar>
   );
 }

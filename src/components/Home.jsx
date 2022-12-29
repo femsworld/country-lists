@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+import NavBar from "./Navbar";
 import Listings from "./Listings";
 import { useEffect, useState } from "react";
 import Pagination from "./Pagination" 
@@ -28,7 +28,7 @@ function Home() {
   }, [] );
   return (
     <>
-      <Navbar />
+      <NavBar />
       <Listings countries={currentRecords} />
       <Pagination
         datacount={countries.length}
