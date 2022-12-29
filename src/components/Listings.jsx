@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
+import { Table, Button} from "react-bootstrap";
 
-export default function Listings() {
+function Listings() {
   const [countries, SetCountries] = useState([]);
 
   const url = "https://restcountries.com/v3.1/all";
@@ -19,7 +20,7 @@ export default function Listings() {
 
   return (
     <>
-      <table class="table">
+      <Table class="table">
         <thead>
           <tr>
             <th scope="col">Flag</th>
@@ -55,7 +56,8 @@ export default function Listings() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </>
   );
 }
+export default Listings;
