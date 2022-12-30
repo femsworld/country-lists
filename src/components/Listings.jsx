@@ -37,7 +37,7 @@ function Listings({countries}) {
               <td>
                 {console.log(country.name.common)}
                 <Link to={`/details/${country.name.common}`}>
-                <Button variant="light" class="btn btn-light">
+                <Button variant="light" data-cy={`detailsBtn-${country.name.common}`}>
                   <i class="fa fa-angle-right"></i>
                 </Button>
                 </Link>

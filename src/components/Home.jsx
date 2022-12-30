@@ -2,17 +2,24 @@ import NavBar from "./Navbar";
 import Listings from "./Listings";
 import React, { useState, useEffect } from "react";
 import Pagination from "./Pagination" 
+import Alert from 'react-bootstrap/Alert';
+import Spinner from 'react-bootstrap/Spinner';
 
 function Home() {
+  const [loading, setLoading] = useState(true);
   const [countries, setCountries] = useState([]);
   const [searchString, setSearchString] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [recordsPerPage] = useState(5);
+  
 
   const url = "https://restcountries.com/v3.1/all";
   const urlWithSearchParams = "https://restcountries.com/v3.1/name/";
-  const [recordsPerPage] = useState(5);
 
   const showSearchResult = (searchString) => {
+    setLoading(true)
+    setCountries([])
+    setCurrentPage(1)
     setSearchString(searchString.toLowerCase())
     };
 
@@ -24,27 +31,43 @@ function Home() {
 
   useEffect(() => {
     const endpoint = searchString ? urlWithSearchParams + searchString : url
-    fetch(endpoint)
-    .then(res => {
-    if (!res.ok) {
-    return Error("Oh no");
+    const getCountryList = () => {
+      fetch(endpoint)
+        .then((response) => response.json())
+        .then(data => {
+          setCountries(data)
+          setLoading(false)
+        })
     }
-    return res.json();
-    })
-    .then(data => setCountries(data));
-    }, [searchString]);
+    getCountryList()
+  }, [searchString]);
   return (
-    <>
-    {console.log(countries)}
-      <NavBar showSearchResult={showSearchResult}/>
-      <Listings countries={currentRecords} />
-      <Pagination
-        datacount={countries.length}
-        setcurrent={setCurrent}
-        currentpage={currentPage}
-        numofpages={nPages}
-      />
-    </>
+    <div className="container mt-3">
+      <h1>Country List</h1>
+      <NavBar showSearchResult={showSearchResult} />
+      {loading && (
+        <div className="text-center mt-5">
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </div>
+      )}
+      {currentRecords.length > 0 && (
+        <>
+          <Listings countries={currentRecords}/>
+          <Pagination
+            setCurrent={setCurrent}
+            currentPage={currentPage}
+            numOfPages={nPages}
+          />
+        </>
+      )}
+      {!currentRecords.length && !loading && (
+        <Alert variant="info" className="text-center">
+          Sorry your search yields no result!
+        </Alert>
+      )}
+    </div>
   );
 }
 
