@@ -1,37 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.10.5 on win32)" generated="20221230 22:58:19.856" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.10.5 on win32)" generated="20221231 00:35:29.490" rpa="false" schemaversion="3">
 <suite id="s1" name="TestCases" source="C:\Users\ennie\Desktop\country-lists\RobotTest\Tests\TestCases.robot">
-<test id="s1-t1" name="Go to Homepage" line="11">
+<test id="s1-t1" name="Go to Homepage" line="10">
 <kw name="Navigate To Homepage" library="Keywords">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221230 22:58:20.222" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
-<status status="PASS" starttime="20221230 22:58:20.221" endtime="20221230 22:58:23.878"/>
+<msg timestamp="20221231 00:35:29.830" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<status status="PASS" starttime="20221231 00:35:29.829" endtime="20221231 00:35:32.305"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221230 22:58:23.878" endtime="20221230 22:58:24.004"/>
+<status status="PASS" starttime="20221231 00:35:32.306" endtime="20221231 00:35:32.431"/>
 </kw>
-<status status="PASS" starttime="20221230 22:58:20.220" endtime="20221230 22:58:24.004"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${homepage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221231 00:35:32.431" endtime="20221231 00:35:33.332"/>
 </kw>
-<status status="PASS" starttime="20221230 22:58:20.219" endtime="20221230 22:58:24.004"/>
+<status status="PASS" starttime="20221231 00:35:29.828" endtime="20221231 00:35:33.332"/>
+</kw>
+<status status="PASS" starttime="20221231 00:35:29.827" endtime="20221231 00:35:33.332"/>
+</test>
+<test id="s1-t2" name="Go to Details page" line="13">
+<kw name="Navigate To Homepage" library="Keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221231 00:35:33.335" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<status status="PASS" starttime="20221231 00:35:33.334" endtime="20221231 00:35:35.444"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221231 00:35:35.444" endtime="20221231 00:35:35.575"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${homepage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221231 00:35:35.575" endtime="20221231 00:35:36.306"/>
+</kw>
+<status status="PASS" starttime="20221231 00:35:33.334" endtime="20221231 00:35:36.307"/>
+</kw>
+<kw name="Click the detail button" library="Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${detailBtn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221231 00:35:36.308" endtime="20221231 00:35:36.337"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${detailBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221231 00:35:36.338" level="INFO">Clicking element 'xpath://*[@id="root"]/div/table/tbody/tr[1]/td[6]/a/button'.</msg>
+<status status="PASS" starttime="20221231 00:35:36.337" endtime="20221231 00:35:36.400"/>
+</kw>
+<status status="PASS" starttime="20221231 00:35:36.307" endtime="20221231 00:35:36.400"/>
+</kw>
+<status status="PASS" starttime="20221231 00:35:33.333" endtime="20221231 00:35:36.400"/>
+</test>
+<test id="s1-t3" name="Search Field" line="17">
+<kw name="Navigate To Homepage" library="Keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221231 00:35:36.405" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<status status="PASS" starttime="20221231 00:35:36.404" endtime="20221231 00:35:38.687"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221231 00:35:38.687" endtime="20221231 00:35:38.817"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${homepage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221231 00:35:38.817" endtime="20221231 00:35:39.704"/>
+</kw>
+<status status="PASS" starttime="20221231 00:35:36.404" endtime="20221231 00:35:39.704"/>
+</kw>
+<kw name="Search for Countries" library="Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${search}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221231 00:35:39.704" endtime="20221231 00:35:39.720"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221231 00:35:39.720" level="INFO">Clicking element 'xpath://*[@id="navbarScroll"]/form/input'.</msg>
+<status status="PASS" starttime="20221231 00:35:39.720" endtime="20221231 00:35:39.834"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221231 00:35:44.848" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221231 00:35:39.834" endtime="20221231 00:35:44.848"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${search}</arg>
+<arg>${inputText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221231 00:35:44.848" level="INFO">Typing text 'Finland' into text field 'xpath://*[@id="navbarScroll"]/form/input'.</msg>
+<status status="PASS" starttime="20221231 00:35:44.848" endtime="20221231 00:35:44.955"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221231 00:35:49.965" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221231 00:35:44.955" endtime="20221231 00:35:49.965"/>
+</kw>
+<status status="PASS" starttime="20221231 00:35:39.704" endtime="20221231 00:35:49.965"/>
+</kw>
+<status status="PASS" starttime="20221231 00:35:36.403" endtime="20221231 00:35:49.965"/>
 </test>
 <doc>Country List Page</doc>
-<status status="PASS" starttime="20221230 22:58:19.856" endtime="20221230 22:58:24.006"/>
+<status status="PASS" starttime="20221231 00:35:29.490" endtime="20221231 00:35:49.965"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TestCases">TestCases</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="TestCases">TestCases</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20221230 22:58:20.216" level="ERROR">Error in file 'C:\Users\ennie\Desktop\country-lists\RobotTest\Tests\TestCases.robot' on line 5: Resource file '..Resources\Variables.robot' does not exist.</msg>
 </errors>
 </robot>
