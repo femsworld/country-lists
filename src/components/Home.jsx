@@ -9,6 +9,7 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [countries, setCountries] = useState([]);
   const [searchString, setSearchString] = useState("");
+
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage] = useState(5);
   
@@ -43,7 +44,7 @@ function Home() {
   }, [searchString]);
   return (
     <div className="container mt-3">
-      <h1>Country List</h1>
+      {/* <h1>Country List</h1> */}
       <NavBar showSearchResult={showSearchResult} />
       {loading && (
         <div className="text-center mt-5">

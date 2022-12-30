@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.13 on win32)" generated="20221230 21:50:01.144" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\ennie\.vscode\extensions\robocorp.robotframework-lsp-1.7.3\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Navigate To Homepage">
+<msg timestamp="20221230 21:50:01.979" level="FAIL">No keyword with name 'Navigate To Homepage' found.</msg>
+<status status="FAIL" starttime="20221230 21:50:01.979" endtime="20221230 21:50:01.979"/>
+</kw>
+<status status="PASS" starttime="20221230 21:50:01.207" endtime="20221230 21:50:19.577"/>
+</kw>
+<status status="PASS" starttime="20221230 21:50:01.207" endtime="20221230 21:50:19.578"/>
+</test>
+<status status="PASS" starttime="20221230 21:50:01.160" endtime="20221230 21:50:19.581"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

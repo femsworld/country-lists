@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.5 on win32)" generated="20221230 22:58:19.856" rpa="false" schemaversion="3">
+<suite id="s1" name="TestCases" source="C:\Users\ennie\Desktop\country-lists\RobotTest\Tests\TestCases.robot">
+<test id="s1-t1" name="Go to Homepage" line="11">
+<kw name="Navigate To Homepage" library="Keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221230 22:58:20.222" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<status status="PASS" starttime="20221230 22:58:20.221" endtime="20221230 22:58:23.878"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221230 22:58:23.878" endtime="20221230 22:58:24.004"/>
+</kw>
+<status status="PASS" starttime="20221230 22:58:20.220" endtime="20221230 22:58:24.004"/>
+</kw>
+<status status="PASS" starttime="20221230 22:58:20.219" endtime="20221230 22:58:24.004"/>
+</test>
+<doc>Country List Page</doc>
+<status status="PASS" starttime="20221230 22:58:19.856" endtime="20221230 22:58:24.006"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestCases">TestCases</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221230 22:58:20.216" level="ERROR">Error in file 'C:\Users\ennie\Desktop\country-lists\RobotTest\Tests\TestCases.robot' on line 5: Resource file '..Resources\Variables.robot' does not exist.</msg>
+</errors>
+</robot>
