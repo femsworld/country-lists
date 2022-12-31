@@ -14,7 +14,7 @@ Navigate To Homepage
 
 
 Assert user is on the HomePage
-     Page should contain     ${homepage}
+    Click element   ${search}
      [Teardown]              Close Browser
 
 Click the detail button

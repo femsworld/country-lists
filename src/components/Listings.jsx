@@ -7,7 +7,7 @@ function Listings({countries}) {
 
   return (
     <>
-      <Table class="table">
+      <Table className="table">
         <thead>
           <tr>
             <th scope="col">Flag</th>
@@ -38,7 +38,7 @@ function Listings({countries}) {
                 {console.log(country.name.common)}
                 <Link to={`/details/${country.name.common}`}>
                 <Button variant="light" data-cy={`detailsBtn-${country.name.common}`}>
-                  <i class="fa fa-angle-right"></i>
+                  <i className="fa fa-angle-right"></i>
                 </Button>
                 </Link>
               </td>

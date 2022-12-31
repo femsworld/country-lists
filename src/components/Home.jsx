@@ -27,7 +27,7 @@ function Home() {
   const setCurrent = (curr) => setCurrentPage(curr);
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-  const currentRecords = countries.slice(indexOfFirstRecord, indexOfLastRecord);
+  const currentRecords = countries && countries.length ? countries.slice(indexOfFirstRecord, indexOfLastRecord) : [];
   const nPages = Math.ceil(countries.length / recordsPerPage);
 
   useEffect(() => {
