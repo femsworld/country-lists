@@ -27,7 +27,7 @@ function Home() {
     setSearchString(searchString.toLowerCase())
     };
 
-  const setCurrent = (curr) => setCurrentPage(curr);
+  const setCurrent = (curr) => { console.log(curr); setCurrentPage(curr)};
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = countries && countries.length ? countries.slice(indexOfFirstRecord, indexOfLastRecord) : [];
@@ -81,7 +81,7 @@ function Home() {
 
   return (
     <div className="container mt-3">
-      <h1>Country List</h1>
+      {/* <h1>Country List</h1> */}
       <NavBar showSearchResult={showSearchResult} />
       {loading && (
         <div className="text-center mt-5">
