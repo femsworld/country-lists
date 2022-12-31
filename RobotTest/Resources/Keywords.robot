@@ -36,4 +36,5 @@ Search for Countries
 Assert user is search for right Country
     Sleep    5s
     Page should contain     Finland
+    Sleep    5s
     [Teardown]              Close Browser

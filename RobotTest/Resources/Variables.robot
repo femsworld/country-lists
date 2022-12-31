@@ -1,6 +1,6 @@
 *** Variable ***
 
-${URL}                    http://localhost:3000/
+${URL}                    https://soft-fox-84d8bc.netlify.app/
 ${BROWSER}                chrome
 ${homepage}               class:table
 ${homeTable}              table:table
