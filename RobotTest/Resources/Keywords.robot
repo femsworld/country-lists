@@ -21,9 +21,19 @@ Click the detail button
     Wait until element is visible   ${detailBtn}
     Click element   ${detailBtn}
 
+Assert user is the detail Window
+    Sleep    5s
+    Click element   ${threeDots}
+    [Teardown]              Close Browser
+
 Search for Countries
     Wait Until Element Is Visible    ${search}
     Click element   ${search}
     Sleep    5s
     input text   ${search}   ${inputText}
     Sleep  5s
+
+Assert user is search for right Country
+    Sleep    5s
+    Page should contain     Finland
+    [Teardown]              Close Browser

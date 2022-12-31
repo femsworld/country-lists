@@ -6,35 +6,45 @@ import NextPageButton from './paginationButtons/NextPageButton';
 import FirstPageButton from './paginationButtons/FirstPageButton';
 import LastPageButton from './paginationButtons/LastPageButton';
 
-function Pagination({ setCurrent, currentPage, numOfPages }) {
+function Pagination({ onClick, currentPage, numOfPages, maxVisible }) {
 
-    return (
-        <Stack direction="horizontal">
-          <FirstPageButton
-            setCurrent={setCurrent}
-            currentPage={currentPage}
-          />
-          <PreviousPageButton
-            setCurrent={setCurrent}
-            currentPage={currentPage}
-          />
-          <VisiblePageNumbers
-            setCurrent={setCurrent}
-            currentPage={currentPage}
-            pages={numOfPages}
-          />
-          <NextPageButton
-            setCurrent={setCurrent}
-            currentPage={currentPage}
-            pages={numOfPages}
-          />
-          <LastPageButton
-            setCurrent={setCurrent}
-            currentPage={currentPage}
-            pages={numOfPages}
-          />
-        </Stack>
-    );
+  return (
+    <Stack direction="horizontal">
+      <FirstPageButton
+        onClick={onClick}
+        currentPage={currentPage}
+      />
+      <PreviousPageButton
+        onClick={onClick}
+        currentPage={currentPage}
+      />
+      {currentPage > Math.ceil(maxVisible / 2) && numOfPages > maxVisible && (
+        <i className="fa fa-ellipsis-h" style={{ marginLeft: "2px", marginRight: "2px" }}></i>
+      )}
+      <VisiblePageNumbers
+        onClick={onClick}
+        currentPage={currentPage}
+        pages={numOfPages}
+        maxVisible={maxVisible}
+      />
+      {maxVisible % 2 === 1 ? (currentPage <= numOfPages - Math.ceil(maxVisible / 2) && numOfPages > maxVisible && (
+        <i className="fa fa-ellipsis-h" style={{ marginLeft: "2px", marginRight: "2px" }}></i>
+      ))
+      :(currentPage < numOfPages - Math.ceil(maxVisible / 2) && numOfPages > maxVisible && (
+        <i className="fa fa-ellipsis-h" style={{ marginLeft: "2px", marginRight: "2px" }}></i>
+      ))}
+      <NextPageButton
+        onClick={onClick}
+        currentPage={currentPage}
+        pages={numOfPages}
+      />
+      <LastPageButton
+        onClick={onClick}
+        currentPage={currentPage}
+        pages={numOfPages}
+      />
+    </Stack>
+);
 }
 
 export default Pagination;

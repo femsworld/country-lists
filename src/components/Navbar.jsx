@@ -18,10 +18,10 @@ export default function NavBar({showSearchResult}) {
   )
 
   return (
-    <Navbar bg="light" expand="lg">
+    // <Navbar bg="light" expand="lg">
+    <Navbar expand="lg" style={{ backgroundColor: '#0492C2'}}>
       <Container fluid>
-      {/* <Container fluid color="#448AF"> */}
-        <Navbar.Brand href="#"><i className="fa fa-bars"></i></Navbar.Brand>
+        <Navbar.Brand href="#" style={{ color: 'white'}}><i className="fa fa-bars"></i></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -29,7 +29,7 @@ export default function NavBar({showSearchResult}) {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#home">Country</Nav.Link>
+            <Nav.Link href="#home" style={{ color: 'white'}}>Country</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control

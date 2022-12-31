@@ -37,7 +37,7 @@ export default function Details() {
                             <Col>{detail.capital}</Col>
                         </Row>
                     </Col>
-                    <Col xs lg="1" style={{fontSize: "2rem"}}><i className="fa fa-ellipsis-v"></i></Col>
+                    <Col xs lg="1" style={{fontSize: "2rem"}} id='Threedots'><i className="fa fa-ellipsis-v"></i></Col>
                 </Row>
                 <Row className="mt-5">
                     <Col style={{fontSize: "8rem"}}>
