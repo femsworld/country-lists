@@ -40,7 +40,7 @@ export default function Details() {
                     <Col xs lg="1" style={{fontSize: "2rem"}} id='Threedots'><i className="fa fa-ellipsis-v"></i></Col>
                 </Row>
                 <Row className="mt-5">
-                    <Col style={{fontSize: "8rem"}}>
+                    <Col style={{fontSize: "6rem"}}>
                         {(Object.values(detail.name.nativeName))[0].official}
                     </Col>
                 </Row>
